@@ -8,9 +8,9 @@ endpoints:
     enabled: true
 datasources:
   default:
-    url: ${DATABASE_URL:`jdbc:mariadb://localhost:3306/db`}
+    url: jdbc:mariadb://${DATABASE_HOST:`localhost`}:${DATABASE_PORT:`3306`}/${DATABASE_DATABASE:`db`}
     driverClassName: org.mariadb.jdbc.Driver
-    username: ${DATABASE_USERNAME:root}
+    username: ${DATABASE_USER:root}
     password: ${DATABASE_PASSWORD}
     schema-generate: CREATE_DROP
     dialect: MYSQL
