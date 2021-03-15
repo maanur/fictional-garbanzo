@@ -1,6 +1,6 @@
 package com.example.controller;
 
-import com.example.config.CriticalComponentHealthIndicator;
+import com.example.config.KillHealthIndicator;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Post;
 
@@ -10,10 +10,10 @@ import javax.inject.Inject;
 public class KillController {
 
     @Inject
-    CriticalComponentHealthIndicator indicator;
+    KillHealthIndicator indicator;
 
     @Post
     public void kill() {
-        indicator.down();
+        indicator.kill();
     }
 }

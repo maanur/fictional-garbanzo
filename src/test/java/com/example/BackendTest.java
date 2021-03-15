@@ -6,6 +6,7 @@ import io.micronaut.runtime.EmbeddedApplication;
 import io.micronaut.runtime.server.EmbeddedServer;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
 import net.bytebuddy.utility.RandomString;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 
@@ -41,5 +42,14 @@ public class BackendTest {
         Assertions.assertEquals("empty\n", client.postEmpty());
         String var = RandomString.make();
         Assertions.assertEquals(var + "\n", client.postVar(var));
+    }
+
+    @Test
+    @Disabled("Почему-то /health недоступна в тестовом контексте")
+    void testPause(PauseClient pauseClient, HealthClient healthClient) {
+        pauseClient.pause();
+        assert healthClient.readiness().code() == 503;
+        pauseClient.unpause();
+        assert healthClient.readiness().code() == 200;
     }
 }
