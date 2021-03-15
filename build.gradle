@@ -33,7 +33,7 @@ dependencies {
     implementation("io.micronaut.data:micronaut-data-hibernate-jpa")
     implementation 'org.mapstruct:mapstruct:1.4.2.Final'
     runtimeOnly("ch.qos.logback:logback-classic")
-    runtimeOnly("org.mariadb.jdbc:mariadb-java-client")
+    runtimeOnly("mysql:mysql-connector-java")
 //    runtimeOnly("com.h2database:h2")
     testRuntimeOnly("com.h2database:h2")
 }
