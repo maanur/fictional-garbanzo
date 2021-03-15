@@ -10,11 +10,11 @@ import javax.inject.Singleton;
 
 @Singleton
 @Liveness
-public class KillHealthIndicator extends AbstractHealthIndicator<String> {
+public class KillLivenessHealthIndicator extends AbstractHealthIndicator<String> {
 
-    private static final Logger log = LoggerFactory.getLogger(KillHealthIndicator.class);
+    private static final Logger log = LoggerFactory.getLogger(KillLivenessHealthIndicator.class);
 
-    public KillHealthIndicator() {
+    public KillLivenessHealthIndicator() {
         super();
         this.healthStatus = HealthStatus.UP;
     }
