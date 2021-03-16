@@ -39,9 +39,9 @@ public class BackendTest {
 
     @Test
     void testEcho(EchoClient client) {
-        Assertions.assertEquals("empty\n", client.postEmpty());
+        Assertions.assertEquals("empty", client.postEmpty());
         String var = RandomString.make();
-        Assertions.assertEquals(var + "\n", client.postVar(var));
+        Assertions.assertEquals(var, client.postVar(var));
     }
 
     @Test
