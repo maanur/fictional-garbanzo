@@ -14,7 +14,7 @@ public class EchoController {
 
     @Post("/{var}")
     public String echo(@PathVariable(name = "var") String var) {
-        return String.format("%s", var);
+        return String.format("%s\n", var);
     }
 
 }
